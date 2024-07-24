@@ -1,8 +1,34 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { animateScroll as scroll } from 'react-scroll'; // Bạn có thể sử dụng thư viện react-scroll để thay thế animate()
 
 
 function Footer(){
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setIsVisible(true);
+            } else {
+                setIsVisible(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const scrollToTop = () => {
+        scroll.scrollToTop({
+            duration: 1500,
+            smooth: 'easeInOutExpo'
+        });
+    };
     return(
         <>
             {/* <!-- Footer Start --> */}
@@ -97,8 +123,9 @@ function Footer(){
 
 
         {/* <!-- Back to Top --> */}
-        <Link to="/" className="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i className="fa fa-arrow-up"></i></Link>   
-
+        {isVisible && (
+            <button onClick={scrollToTop} className="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i className="fa fa-arrow-up"></i></button>
+        )}
 
         </>
     )

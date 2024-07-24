@@ -4,6 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import Index from './frontend/index';
 import FontendRoute from './route/frontend';
 import NotFound from './frontend/pages/notFound';
+import LoginAdmin from './backend/pages/loginAdmin';
 class App extends React.Component {
   render() {
     console.log(FontendRoute);
@@ -19,6 +20,7 @@ class App extends React.Component {
             })}
           </Route>
           {/* Cần thêm Route cho NotFound */}
+          <Route path="/admin" element={<LoginAdmin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

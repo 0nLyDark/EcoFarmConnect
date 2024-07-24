@@ -1,0 +1,51 @@
+.loginAdmin{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/bg.jpg');
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+.background{
+    width: 100vw;
+    height: 100vh;
+
+    color: white;
+}
+.background >*{
+}
+.frame{
+    width: 400px;
+    /* background-color: rgb(255, 255, 255,0.2);
+    border-radius: 45px; */
+    padding: 50px 25px 50px 25px;
+    box-sizing: border-box;
+}
+.frame input,.frame button{
+    height: 50px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+.frame input{
+    color: white;
+    background-color:rgba(245, 245, 245, 0.15);
+    box-shadow: none !important;
+}
+.frame input::placeholder{
+    color: white;
+}
+.frame input:hover,.frame input:focus{
+    color: white;
+    background-color: rgb(0, 0, 0,0);
+    border: 1px white solid;
+
+}
+.frame button{
+    background-color:antiquewhite ;
+    border: none;
+}
+.frame button:hover{
+    background-color:skyblue;
+}
+.frame h2{
+    opacity: 1;
+}

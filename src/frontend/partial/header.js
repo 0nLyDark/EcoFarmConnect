@@ -29,14 +29,14 @@ function Header(){
             </div>
             <div className="container px-0">
                 <nav className="navbar navbar-light bg-white navbar-expand-xl">
-                    <Link to="index.html" className="navbar-brand"><h1 className="text-primary display-6">Fruitables</h1></Link>
+                    <Link to="/" className="navbar-brand"><h1 className="text-primary display-6">Fruitables</h1></Link>
                     <button className="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span className="fa fa-bars text-primary"></span>
                     </button>
                     <div className="collapse navbar-collapse bg-white" id="navbarCollapse">
                         <div className="navbar-nav mx-auto">
-                            <Link to="index.html" className="nav-item nav-link active">Home</Link>
-                            <Link to="shop.html" className="nav-item nav-link">Shop</Link>
+                            <Link to="/" className="nav-item nav-link active">Home</Link>
+                            <Link to="san-pham" className="nav-item nav-link">Shop</Link>
                             <Link to="shop-detail.html" className="nav-item nav-link">Shop Detail</Link>
                             <div className="nav-item dropdown">
                                 <Link to="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</Link>

@@ -10,7 +10,7 @@ import Footer from './partial/footer'
 
 import { Outlet } from 'react-router-dom'
 function Index(){
-  
+    
     return(
         <>
         <Header />
