@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import Index from './frontend/index';
+import FontendRoute from './route/frontend';
+import NotFound from './frontend/pages/notFound';
+class App extends React.Component {
+  render() {
+    console.log(FontendRoute);
+    return (
+      <BrowserRouter>
+        <ToastContainer />
+        <Routes>
+          <Route path="/" element={<Index />}>
+          
+            {FontendRoute.map((route, index) => {
+              const Page = route.component;
+              return <Route key={index} path={route.path} element={<Page />} />;
+            })}
+          </Route>
+          {/* Cần thêm Route cho NotFound */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
