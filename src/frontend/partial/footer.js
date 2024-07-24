@@ -25,7 +25,7 @@ function Footer(){
 
     const scrollToTop = () => {
         scroll.scrollToTop({
-            duration: 1500,
+            duration: 1000,
             smooth: 'easeInOutExpo'
         });
     };
